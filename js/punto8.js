@@ -4,26 +4,23 @@
 //a) De cada triángulo la medida de su base, su altura y su superficie.
 //b) La cantidad de triángulos cuya superficie es mayor a 12.
 
-// const cantDePares = Number(prompt("¿Cuantos pares de datos desea ingresar?"));
-// let result = [];
-// const superficies = []
+let result = [];
+let mayores = 0;
 
-// let i = 1;
+const cantPares = Number(prompt("¿Cuantos pares de datos desea ingresar?"));
+for (let i = 1; i <= cantPares; i++) {
+  const base = Number(prompt(`ingrese la base del ${i}º trinangulo`));
+  const alt = Number(prompt(`ingrese la altura del ${i}º trinangulo`));
+  const sup = (base * alt) / 2;
 
-// while (i <= cantDePares) {
-//   const base = Number(prompt("ingrese la base del trinangulo"));
-//   const alt = Number(prompt("ingrese la altura del trinangulo"));
-//   const sup = (base * alt) / 2;
+  let medidas = `${i}º Triangulo: base: ${base} - altura: ${alt} - superficie: ${sup}
+  `;
+  result.push(medidas);
 
-//   let medidas = `Triangulo ${i}: base: ${base} - altura: ${alt} - superficie: ${sup}
-// `;
-//   result.push(medidas);
-//   superficies.push(sup)
-//   i++;
-// }
+  if (sup > 12) {
+    mayores++;
+  }
+}
 
-// alert(result);
-// alert()
-
-
-for(let i =0)
+alert(`${result}
+${mayores} triangulos posen una superficie mayor a doce`);
